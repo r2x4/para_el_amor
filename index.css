@@ -69,6 +69,7 @@ body {
     border-radius: 15px;
 }
 
+/* Estilo para el cuadro de texto */
 .text-box {
     font-size: 18px;
     font-weight: bold;
@@ -81,14 +82,12 @@ body {
     margin-top: 20px;
     text-align: center; 
     position: absolute;
-    top: 10%; /* Ajustamos la posición */
+    top: -120px; /* Ajusta el valor negativo para desplazar el texto hacia arriba */
     left: 50%;
-    transform: translateX(-50%); /* Centramos horizontalmente */
+    transform: translateX(-50%); /* Centrado horizontal */
     max-width: 80%; /* Establecemos un ancho máximo */
     width: auto; /* Dejamos que el ancho se ajuste automáticamente */
-    padding: 10px 20px;
 }
-
 
 /* Contenedor para la imagen cuadrada con bordes redondeados */
 .image-container {
@@ -107,6 +106,7 @@ body {
     background-color: #f7aad0;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     padding: 10px;
+    margin-top: 40px; /* Ajuste de margen superior para separación */
 }
 
 
