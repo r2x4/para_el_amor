@@ -29,12 +29,66 @@ body {
     padding: 0;
 }
 
-/* Contenedor principal */
 .container {
     text-align: center;
     position: relative;
     top: 0%;
+    display: flex;  /* Utiliza flexbox */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centrado horizontal */
+    justify-content: center; /* Centrado vertical */
+    min-height: 100vh;  /* Asegura que el contenedor ocupe toda la altura */
 }
+
+/* Contenedor para la imagen cuadrada con bordes redondeados */
+.image-container {
+    position: relative;
+    width: 50vw;  /* Aumentamos el tamaño del contenedor */
+    height: 50vw; /* Aumentamos la altura proporcionalmente */
+    max-width: 600px;  /* Establecemos un tamaño máximo */
+    max-height: 600px; /* Establecemos un tamaño máximo */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 5px solid #ff66b2;
+    background-color: #f7aad0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+
+/* Imagen dentro del cuadrado centrada */
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+.text-box {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #ff66b2;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: block; 
+    margin-top: 20px;
+    text-align: center; 
+    position: absolute;
+    top: 10%; /* Ajustamos la posición */
+    left: 50%;
+    transform: translateX(-50%); /* Centramos horizontalmente */
+    max-width: 80%; /* Establecemos un ancho máximo */
+    width: auto; /* Dejamos que el ancho se ajuste automáticamente */
+    padding: 10px 20px;
+}
+
 
 /* Contenedor para la imagen cuadrada con bordes redondeados */
 .image-container {
@@ -55,42 +109,15 @@ body {
     padding: 10px;
 }
 
-/* Imagen dentro del cuadrado centrada */
-.main-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.3s ease-in-out;
-    border-radius: 15px;
-}
-
-/* Estilo para el cuadro de texto */
-.text-box {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    background-color: #ff66b2;
-    color: white;
-    border-radius: 10px;
-    padding: 10px 20px;
-    display: block; 
-    margin-top: 20px;
-    text-align: center; 
-    width: 100%; 
-}
-
 
 /* Estilo de los botones */
 .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 55vw; 
-    height: 55vw; 
+    flex-wrap: wrap; /* Esto permite que los botones se ajusten a múltiples líneas */
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 20px; /* Separar los botones de la imagen */
 }
 
 /* Botones con borde redondeado */
@@ -105,119 +132,55 @@ body {
     transition: background-color 0.3s;
     border-radius: 20px;
     font-family: var(--fuente-krona);
-    position: absolute;
+    min-width: 120px; /* Aseguramos que todos los botones tengan un ancho consistente */
 }
 
-/* Distribución circular de los botones */
-.buttons button:nth-child(1) {
-    transform: rotate(0deg) translateY(-30vw) rotate(0deg);
-}
-
-.buttons button:nth-child(2) {
-    transform: rotate(51.4deg) translateY(-35vw) rotate(-51.4deg);
-}
-
-.buttons button:nth-child(3) {
-    transform: rotate(102.8deg) translateY(-30vw) rotate(-102.8deg);
-}
-
-.buttons button:nth-child(4) {
-    transform: rotate(154.2deg) translateY(-30vw) rotate(-154.2deg);
-}
-
-.buttons button:nth-child(5) {
-    transform: rotate(205.6deg) translateY(-30vw) rotate(-205.6deg);
-}
-
+/* Hacer que los botones se ajusten en dos filas */
+.buttons button:nth-child(1),
+.buttons button:nth-child(2),
+.buttons button:nth-child(3),
+.buttons button:nth-child(4),
+.buttons button:nth-child(5),
 .buttons button:nth-child(6) {
-    transform: rotate(257deg) translateY(-30vw) rotate(-257deg);
+    width: calc(33.33% - 30px); /* Tres botones por fila, con espacio entre ellos */
 }
 
 .buttons button:nth-child(7) {
-    transform: rotate(308.4deg) translateY(-30vw) rotate(-308.4deg);
+    width: 100%; /* El último botón ocupa toda la fila */
 }
 
-/* Media Query para dispositivos pequeños (menores a 1200px) */
-@media (max-width: 1200px) {
-    .buttons {
-        width: 50vw; /* Reducimos el tamaño del círculo */
-        height: 50vw;
-    }
 
-    .main-image {
-        width: 80%; /* Reducimos el tamaño de la imagen */
-        height: auto;
-    }
-
-    .button {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .text-box {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-
-    .image-container {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-/* Media Query para dispositivos muy pequeños (menos de 768px) */
+/* Ajustes para dispositivos pequeños */
 @media (max-width: 768px) {
-    .buttons {
-        width: 40vw; /* Ajustamos el tamaño de los botones para dispositivos más pequeños */
-        height: 40vw;
-    }
-
-    .main-image {
-        width: 70%;
-        height: auto;
-    }
-
     .button {
-        font-size: 12px;
-        padding: 8px 16px;
+        font-size: 14px;
+        padding: 10px 20px;
     }
 
-    .text-box {
-        font-size: 14px;
-        padding: 8px 16px;
+    .buttons {
+        grid-template-columns: repeat(2, 1fr); /* En pantallas medianas, se usan 2 columnas */
     }
 
     .image-container {
-        width: 180px;
-        height: 180px;
+        width: 70vw;
+        height: 70vw;
     }
 }
 
-/* Media Query para pantallas extremadamente pequeñas (menos de 480px) */
+/* Ajustes para pantallas muy pequeñas */
 @media (max-width: 480px) {
-    .buttons {
-        width: 35vw; /* Ajustamos el tamaño del círculo */
-        height: 35vw;
-    }
-
-    .main-image {
-        width: 80%;
-        height: auto;
-    }
-
     .button {
-        font-size: 10px;
-        padding: 6px 12px;
+        font-size: 12px;
+        padding: 8px 16px;
     }
 
-    .text-box {
-        font-size: 12px;
-        padding: 6px 12px;
+    .buttons {
+        grid-template-columns: 1fr; /* En pantallas muy pequeñas, solo 1 columna */
     }
 
     .image-container {
-        width: 150px;
-        height: 150px;
+        width: 80vw;
+        height: 80vw;
     }
 }
 
