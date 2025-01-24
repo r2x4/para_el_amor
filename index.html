@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cosita</title>
+    <!-- Establecer el ícono en la pestaña del navegador -->
+    <link rel="icon" href="./IMAGENES/corazon.jpg" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img id="imageDisplay" src="./IMAGENES/Amor.jpeg" alt="Imagen especial" class="main-image">
+        </div>
+        <!-- Botones circulares alrededor de la imagen -->
+        <div class="buttons">
+            <button class="button" onclick="changeImage('amor')">Amor</button>
+            <button class="button" onclick="changeImage('persona')">Mi persona <br> Favorita</button>
+            <button class="button" onclick="changeImage('feliz')">Feliz</button>
+            <button class="button" onclick="changeImage('alegria')">Alegría</button>
+            <button class="button" onclick="changeImage('sonrisa')">Sonrisa</button>
+            <button class="button" onclick="changeImage('vida')">Vida</button>
+            <button class="button" onclick="changeImage('juntos')">Juntos</button>
+        </div>
+
+       
+        <div id="textContainer" class="text-container" style="display: none;">
+            <div id="textDisplay" class="text-box"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

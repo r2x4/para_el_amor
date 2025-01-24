@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Usar las varibles_CSS optimizan el trabajo "OJO" */
+:root {
+    --color-primario: #444141;
+    --color-secundario: #f6f6f6;
+    --color-terciario: #22D4FD;
+    --color-hover: #272727;
+
+    --fuente-montserrat: 'Montserrat', sans-serif;
+    --fuente-krona: 'Krona One', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general de la página */
+body {
+    font-family: var(--fuente-montserrat);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-primario);
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    position: relative;
+    top: 0%;
+}
+
+/* Contenedor para la imagen cuadrada con bordes redondeados */
+.image-container {
+    position: relative;
+    width: 35vw;  
+    height: 35vw; 
+    max-width: 450px;  
+    max-height: 450px; 
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 5px solid #ff66b2;
+    background-color: #f7aad0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+/* Imagen dentro del cuadrado centrada */
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+/* Estilo para el cuadro de texto */
+.text-box {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #ff66b2;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: block; 
+    margin-top: 20px;
+    text-align: center; 
+    width: 100%; 
+}
+
+
+/* Estilo de los botones */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55vw; 
+    height: 55vw; 
+}
+
+/* Botones con borde redondeado */
+.button {
+    background-color: #ff66b2;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+    font-family: var(--fuente-krona);
+    position: absolute;
+}
+
+/* Distribución circular de los botones */
+.buttons button:nth-child(1) {
+    transform: rotate(0deg) translateY(-30vw) rotate(0deg);
+}
+
+.buttons button:nth-child(2) {
+    transform: rotate(51.4deg) translateY(-35vw) rotate(-51.4deg);
+}
+
+.buttons button:nth-child(3) {
+    transform: rotate(102.8deg) translateY(-30vw) rotate(-102.8deg);
+}
+
+.buttons button:nth-child(4) {
+    transform: rotate(154.2deg) translateY(-30vw) rotate(-154.2deg);
+}
+
+.buttons button:nth-child(5) {
+    transform: rotate(205.6deg) translateY(-30vw) rotate(-205.6deg);
+}
+
+.buttons button:nth-child(6) {
+    transform: rotate(257deg) translateY(-30vw) rotate(-257deg);
+}
+
+.buttons button:nth-child(7) {
+    transform: rotate(308.4deg) translateY(-30vw) rotate(-308.4deg);
+}
+
+/* Media Query para dispositivos pequeños (menores a 1200px) */
+@media (max-width: 1200px) {
+    .buttons {
+        width: 50vw; /* Reducimos el tamaño del círculo */
+        height: 50vw;
+    }
+
+    .main-image {
+        width: 80%; /* Reducimos el tamaño de la imagen */
+        height: auto;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .text-box {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Media Query para dispositivos muy pequeños (menos de 768px) */
+@media (max-width: 768px) {
+    .buttons {
+        width: 40vw; /* Ajustamos el tamaño de los botones para dispositivos más pequeños */
+        height: 40vw;
+    }
+
+    .main-image {
+        width: 70%;
+        height: auto;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .text-box {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .image-container {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Media Query para pantallas extremadamente pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .buttons {
+        width: 35vw; /* Ajustamos el tamaño del círculo */
+        height: 35vw;
+    }
+
+    .main-image {
+        width: 80%;
+        height: auto;
+    }
+
+    .button {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .text-box {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .image-container {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+
+
+
+
+
+
+
