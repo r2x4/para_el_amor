@@ -81,7 +81,7 @@ body {
     margin-top: 20px;
     text-align: center; 
     position: absolute;
-    top: 0%; /* Ajustamos la posición */
+    top: 10%; /* Ajustamos la posición */
     left: 50%;
     transform: translateX(-50%); /* Centramos horizontalmente */
     max-width: 80%; /* Establecemos un ancho máximo */
